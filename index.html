@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Simple Calculator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/main.css" media="screen" charset="utf-8">
   </head>
@@ -10,7 +11,14 @@
     <div class="container center-align">
       <div class="app">
         <h1 class="center-align">Calculator</h1>
-        <input id="inputNumber" placeholder="0" class="right-align" disabled />
+        <div class="col s12">
+          <div class="row">
+            <input id="inputNumber" placeholder="0" class="left col s10 right-align" disabled />
+            <div class="col s2">
+              <i class="clear-icon material-icons" onclick="clearCalc()">delete_forever</i>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <div class="col s9 numPad">
             <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(1)">1</div>
@@ -28,15 +36,13 @@
           </div>
           <div class="col s3">
             <!-- add ids to these divs to pass objects to functions... weird! -->
-            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('add')">+</div>
-            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('subtract')">-</div>
-            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('multiply')">x</div>
-            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('divide')">/</div>
-            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="equalsFunction()">=</div>
+            <div class="col s12 btn-large waves-effect waves-light red calcs" onclick="setOperator('add')">+</div>
+            <div class="col s12 btn-large waves-effect waves-light red calcs" onclick="setOperator('subtract')">-</div>
+            <div class="col s12 btn-large waves-effect waves-light red calcs" onclick="setOperator('multiply')">x</div>
+            <div class="col s12 btn-large waves-effect waves-light red calcs" onclick="setOperator('divide')">/</div>
+            <div class="col s12 btn-large waves-effect waves-light red calcs" onclick="equalsFunction()">=</div>
           </div>
         </div>
-        <hr>
-        <h3 id="result"></h3>
       </div>
     </div>
 

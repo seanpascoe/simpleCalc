@@ -21,6 +21,11 @@ function clearOperandsResult() {
   globalOperator = null;
 };
 
+function clearCalc() {
+  clearInput(0);
+  clearOperandsResult();
+}
+
 function numPadClick(num) {
   if (shouldClearResult) {
     inputNumber.value = "";
@@ -52,8 +57,10 @@ function setOperator(operator) {
 };
 
 function equalsFunction() {
-  calc(globalOperator);
-  clearOperandsResult();
+  if (firstOperand) {
+    calc(globalOperator);
+    clearOperandsResult();
+  }
 };
 
 function calc(operator) {

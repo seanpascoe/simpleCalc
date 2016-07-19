@@ -16,3 +16,14 @@
   font-size: 3.7em;
   color: rgba(0, 0, 0, .6);
 }
+
+i.clear-icon {
+  font-size: 4.7em;
+  color: rgba(0, 0, 0, .3);
+  cursor: pointer;
+}
+
+i.clear-icon:hover {
+  font-size: 4.8em;
+  color: rgba(0, 0, 0, .5);
+}
