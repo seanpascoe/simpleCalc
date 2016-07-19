@@ -1,0 +1,18 @@
+.app {
+  max-width: 600px;
+  margin: 0 auto
+}
+
+.digits {
+  margin: 5px 7px;
+}
+
+.calcs {
+  margin-bottom: 5px;
+}
+
+#inputNumber {
+  height: 100%;
+  font-size: 3.7em;
+  color: rgba(0, 0, 0, .6);
+}
