@@ -6,9 +6,12 @@ var firstOperand;
 var secondOperand;
 var globalOperator;
 
+var shouldClearResult = false;
+
 //clears input value only
-function clearInput() {
+function clearInput(val) {
   inputNumber.value = "";
+  inputNumber.placeholder = val;
 };
 
 //clears all global operand and operator variables
@@ -19,10 +22,14 @@ function clearOperandsResult() {
 };
 
 function numPadClick(num) {
+  if (shouldClearResult) {
+    inputNumber.value = "";
+  }
   inputValue = inputNumber.value;
   if (num !== "." || inputValue.indexOf(".") === -1) {
     inputNumber.value += num;
   }
+  shouldClearResult = false;
 };
 
 function plusMinus() {
@@ -32,15 +39,15 @@ function plusMinus() {
 function setOperator(operator) {
   //determine if this is the first operand
   if (firstOperand) {
-    console.log(globalOperator);
+
     calc(globalOperator);
     globalOperator = operator;
-    console.log(globalOperator);
+
   } else {
-    console.log(operator);
+
     firstOperand = Number(inputNumber.value);
     globalOperator = operator;
-    clearInput();
+    clearInput(inputNumber.value);
   }
 };
 
@@ -51,7 +58,7 @@ function equalsFunction() {
 
 function calc(operator) {
   var result;
-  console.log(operator)
+
   secondOperand = Number(inputNumber.value);
   switch (operator) {
     case add:
@@ -68,8 +75,9 @@ function calc(operator) {
       break;
   }
   //print result here
-  console.log(result);
+  inputNumber.value = result;
   //sets first operand to result in case of further calculations
   firstOperand = result;
-  clearInput();
+  //tells app to clear the result before accepting inputNumber
+  shouldClearResult = true;
 };

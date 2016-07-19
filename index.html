@@ -10,21 +10,21 @@
     <div class="container center-align">
       <div class="app">
         <h1 class="center-align">Calculator</h1>
-        <input id="inputNumber" placeholder="Enter a number" class="right-align" disabled />
+        <input id="inputNumber" placeholder="0" class="right-align" disabled />
         <div class="row">
           <div class="col s9 numPad">
-            <div id="num1" class="col s3 waves-effect btn-large digits" onclick="numPadClick(1)">1</div>
-            <div id="num2" class="col s3 waves-effect btn-large digits" onclick="numPadClick(2)">2</div>
-            <div id="num3" class="col s3 waves-effect btn-large digits" onclick="numPadClick(3)">3</div>
-            <div id="num4" class="col s3 waves-effect btn-large digits" onclick="numPadClick(4)">4</div>
-            <div id="num5" class="col s3 waves-effect btn-large digits" onclick="numPadClick(5)">5</div>
-            <div id="num6" class="col s3 waves-effect btn-large digits" onclick="numPadClick(6)">6</div>
-            <div id="num7" class="col s3 waves-effect btn-large digits" onclick="numPadClick(7)">7</div>
-            <div id="num8" class="col s3 waves-effect btn-large digits" onclick="numPadClick(8)">8</div>
-            <div id="num9" class="col s3 waves-effect btn-large digits" onclick="numPadClick(9)">9</div>
-            <div id="num0" class="col s3 waves-effect btn-large digits" onclick="numPadClick(0)">0</div>
-            <div id="numDot" class="col s3 waves-effect btn-large digits" onclick="numPadClick('.')">.</div>
-            <div id="numDot" class="col s3 waves-effect btn-large digits" onclick="plusMinus()">+/-</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(1)">1</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(2)">2</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(3)">3</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(4)">4</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(5)">5</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(6)">6</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(7)">7</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(8)">8</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(9)">9</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick(0)">0</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="numPadClick('.')">.</div>
+            <div class="col s3 waves-effect btn-large digits" onclick="plusMinus()">+/-</div>
           </div>
           <div class="col s3">
             <div id="add" class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator(add)">+</div>
