@@ -8,13 +8,13 @@ var globalOperator;
 
 var shouldClearResult = false;
 
-//clears input value only
+//clear input field value and set the placeholder to the parameter
 function clearInput(val) {
   inputNumber.value = "";
   inputNumber.placeholder = val;
 };
 
-//clears all global operand and operator variables
+//clear all global operand and operator variables
 function clearOperandsResult() {
   firstOperand = null;
   secondOperand = null;
@@ -27,7 +27,8 @@ function clearCalc() {
 }
 
 function numPadClick(num) {
-  if (shouldClearResult) {
+  //determine whether to clear the input field before printing to it
+  if (shouldClearResult && inputNumber.value != "-") {
     inputNumber.value = "";
   }
   inputValue = inputNumber.value;
@@ -38,18 +39,30 @@ function numPadClick(num) {
 };
 
 function plusMinus() {
-  console.log("finish this");
+  //determines if input field should be cleared
+  if (shouldClearResult) {
+    inputNumber.value = "";
+  }
+  //determines sign of existing input field value
+  inputSignValue = Math.sign(Number(inputNumber.value));
+  //if the input field is a positive number or zero, change to a negative value
+  if(inputSignValue === 1 || inputSignValue === 0) {
+    inputNumber.value = "-" + inputNumber.value;
+  //else if the input field is a negative number or negative zero, change to positive value
+  } else if(inputSignValue === -1 || inputSignValue === -0) {
+    inputNumber.value = inputNumber.value.slice(1);
+  }
 };
 
 function setOperator(operator) {
-  //determine if this is the first operand
+  //If the first operand is populated, calculate using the global operator variable
+  //before changing the global operator to the operator clicked.
+  //If first operand is not poulated, set it to the value of the input field,
+  //set the globalOperator to the operator clicked, and then clear the input field.
   if (firstOperand) {
-
     calc(globalOperator);
     globalOperator = operator;
-
   } else {
-
     firstOperand = Number(inputNumber.value);
     globalOperator = operator;
     clearInput(inputNumber.value);
@@ -65,17 +78,16 @@ function equalsFunction() {
 
 function calc(operator) {
   var result;
-
   secondOperand = Number(inputNumber.value);
   switch (operator) {
     case "add":
-      var result = firstOperand + secondOperand;
+      result = firstOperand + secondOperand;
       break;
     case "subtract":
-      var result = firstOperand - secondOperand;
+      result = firstOperand - secondOperand;
       break;
     case "multiply":
-      var result = firstOperand * secondOperand;
+      result = firstOperand * secondOperand;
       break;
     case "divide":
       secondOperand === 0 ? result = "Can't divide by 0" : result = firstOperand / secondOperand;
