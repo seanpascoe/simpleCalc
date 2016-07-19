@@ -27,11 +27,12 @@
             <div class="col s3 waves-effect btn-large digits" onclick="plusMinus()">+/-</div>
           </div>
           <div class="col s3">
-            <div id="add" class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator(add)">+</div>
-            <div id="subtract" class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator(subtract)">-</div>
-            <div id="multiply" class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator(multiply)">x</div>
-            <div id="divide" class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator(divide)">/</div>
-            <div id="equals" class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="equalsFunction()">=</div>
+            <!-- add ids to these divs to pass objects to functions... weird! -->
+            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('add')">+</div>
+            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('subtract')">-</div>
+            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('multiply')">x</div>
+            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="setOperator('divide')">/</div>
+            <div class="col s12 btn btn-large waves-effect waves-light red calcs" onclick="equalsFunction()">=</div>
           </div>
         </div>
         <hr>

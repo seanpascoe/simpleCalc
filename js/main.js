@@ -61,16 +61,16 @@ function calc(operator) {
 
   secondOperand = Number(inputNumber.value);
   switch (operator) {
-    case add:
+    case "add":
       var result = firstOperand + secondOperand;
       break;
-    case subtract:
+    case "subtract":
       var result = firstOperand - secondOperand;
       break;
-    case multiply:
+    case "multiply":
       var result = firstOperand * secondOperand;
       break;
-    case divide:
+    case "divide":
       secondOperand === 0 ? result = "Can't divide by 0" : result = firstOperand / secondOperand;
       break;
   }
